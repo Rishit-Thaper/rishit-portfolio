@@ -1,0 +1,444 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@400;500&family=Poppins:wght@400;500&family=Work+Sans:wght@400;500&display=swap");
+@import "breakpoints";
+@import "mixins";
+@import "color";
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Montserrat;
+  text-decoration: none;
+  list-style: none;
+}
+body{
+  // background: linear-gradient(112.1deg,  rgb(20, 30, 48) 11.2%, rgb(32, 38, 57) 70.2%);
+  
+  background: linear-gradient(112.1deg,  #081327 11.2%, #081427 70.2%);
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin-left: 250px;
+
+  @include md{
+    margin-left: 0;
+  }
+
+}
+.nav{
+  .sideBar{
+
+
+    z-index: 1;
+    // padding: 5rem 0 0 0;
+    width: 250px;
+    height: 100%;
+    // padding: 20px 0;
+    position: fixed;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-6;
+    box-shadow: 2px 0 15px 0 rgba(11, 9, 37, 0.299);
+    transition: opacity 0.3s ease-in-out; 
+    
+    @include md{
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+    }
+  
+  
+    .sideBarContent{
+      img{
+        width: 50%;
+        display: block;
+        margin: auto;
+        @include md{
+          width: 25%;
+          text-align: center;
+        }
+      }
+      .sideBarLinks{
+        padding: 1.5rem 3rem;
+        li{
+          padding: 1rem 0;
+          font-size: 1.2rem;
+          font-weight: 500;
+          color: $color-1;
+          &:hover{
+            color: $color-4;
+          }
+  
+          i{
+            padding-right: 1rem;
+          }
+        }
+        a.active {
+          color: $color-4;
+        }
+        a{
+          color: $color-1;
+          transition: ease-in-out 0.3s;
+  
+          &:hover{
+            color: $color-4;
+          }
+        }
+      }
+      .buttons{
+        padding: 0rem 3rem 0 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      button{
+        @include commonButton(0.5rem, 1rem);
+        width: 100%;
+        margin: 0.5rem auto;
+  
+        @include md{
+          width: 50%;
+        }
+      }
+    }
+      @include md{
+      width: 100%;
+      text-align: center;
+      opacity: 0; /* Initially set opacity to 0 */
+      pointer-events: none;
+      &.show-sidebar {
+        width: 100%; /* Expand width to cover the screen */
+        opacity: 1;
+        pointer-events:all;
+      }
+    }
+  }
+  .burger-menu {
+    position: absolute;
+    top: 2rem; /* Adjust this value to control vertical positioning */
+    right: 2rem; /* Adjust this value to control horizontal positioning */
+    color: $color-3;
+    font-size: 2rem;
+    padding: 1rem;
+    text-align:center;
+    display: flex;
+    justify-items: center;
+    background-color: $color-4;
+    border-radius: 50%;
+    border: none;
+    display: none;
+    z-index: 2;
+  
+    @include md{
+      display: block;
+      display: flex;
+      justify-items: center;
+    }
+  }
+}
+
+
+.Home{
+  color: $color-1;
+  @include commonEffect();
+  // padding: 10rem 0 10rem 3rem;
+  @include xl{
+
+    padding: 2rem;
+  }
+  .homeContent{
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    h1{
+      color: $color-1;
+      font-size: 4rem;
+      margin: 1rem 0;
+    }
+    h2{
+      color: $color-2;
+      font-size: 2.5rem;
+    }
+    p{
+      color: $color-2;
+      font-size: 1rem;
+      margin: 1rem 0;
+      line-height: 25px;
+    }
+    #hi{
+      color: $color-4;
+      font-size: 1.5rem;
+      margin: 1rem 0;
+    }
+    button{
+      @include commonButton(0.5rem, 1rem);
+    }
+    
+  }
+
+
+}
+
+//about-section
+.about{
+  @include commonEffect();
+
+  @include md{
+    flex-direction: column;
+    padding: 1rem;
+  }
+  @include sm{
+    margin-top: 0rem;
+  }
+  .about-section{
+
+    animation: fadeIn 1s ease-in-out;
+    @include md{
+      padding: 5rem 0;
+
+    }
+    h1{
+      color: $color-4;
+      text-align: center;
+      font-weight: 400;
+      margin: 1rem 0 0 0;
+      @include md{
+        text-align: center;
+        font-size: 1.5rem;
+      }
+    }
+    .about-grid{
+      display: flex;
+      padding: 2rem;
+      justify-content: center;
+      align-items: center;
+
+      @include lg{
+        flex-direction: column;
+        padding: 0.5rem;
+        align-items: center;
+      }
+      img{
+        width: 25%;
+        min-width: 300px;
+        border-radius: 50%;
+        padding: 1rem;
+
+      }
+      .about-content{
+        p{
+          color: $color-1;
+          margin: 1rem;
+          @include lg{
+            line-height: 25px;
+          }
+        }
+        ul{
+          color: $color-1;
+          margin: 0 0rem 0rem 3rem;
+          li{
+            list-style: circle;
+            padding: 0.5rem 0;
+            line-height: 20px;
+            font-size: 1rem;
+            @include lg{
+              padding: 0.6rem 0 0 0 ;
+              line-height: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//skills-section
+.skills{
+  @include commonEffect();
+  @include md{
+    padding: 5rem 0; 
+  }
+  .skill-section{
+    padding: 2rem 0;
+    animation: fadeIn 1s ease-in-out;
+
+    .skill-grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      @include md{
+        grid-template-columns: auto;
+      }
+      @include sm{
+        padding: 0 3rem;
+      }
+      .skill-div{
+        // border: 1px solid $color-1;
+        padding: 2rem;
+        background-color: $color-6;
+        border-radius: 15px;
+        h3{
+          font-size: 1.5rem;
+          font-weight: 400;
+          color: $color-2;
+        }
+        .skill-icons{
+          padding: 1rem 0 0 0;
+          // display: flex;
+          .icon{
+            font-size: 3rem;
+            margin: 0 1rem 1rem 0;
+            color: $color-4;
+          }
+        }
+      }
+    }
+  }
+}
+
+//projects-section
+
+.projects{
+  animation: fadeIn 1s ease-in-out;
+
+  @include commonEffect();
+  @include md{
+    padding: 5rem 2rem; 
+  }
+  .project-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    @include lg{
+      grid-template-columns: 1fr;
+    }
+    .project{
+      background-color: $color-6;
+      padding: 1.5rem;
+      border-radius: 15px;
+      transition: 0.3s ease-in-out;
+      border: 1px solid $color-6;
+      @include md{
+        padding: 2rem;
+      }
+
+      h4{
+        color: $color-4;
+        margin: 1rem 0;
+        font-weight: 500;
+      }
+      img{
+        min-width: 40%;
+
+      }
+      p{
+        margin-bottom: 1rem;
+        color: $color-1;
+        span{
+          color: $color-4;
+        }
+      }
+      button{
+        @include commonButton(0.5rem, 1rem);
+        a{
+          color: $color-4;
+        }
+      }
+      &:hover{
+        border: 1px solid $color-4;
+      }
+    }
+  }
+}
+
+
+//contact-section
+.contact{
+  @include commonEffect();
+  animation: fadeIn 1s ease-in-out;
+
+  @include md{
+    flex-direction: row;
+    padding: 2rem;
+  }
+  @include sm{
+    flex-direction: column;
+  }
+  .contact-section{
+    display: flex;
+    flex-direction: column;
+    
+    h4{
+      color: $color-4;
+      font-size: 1.5rem;
+      text-align: center;
+      margin: 0 0 3rem 0;
+      font-weight: 400;
+    }
+    form{
+      @include sm{
+        width: 100%;
+      }
+      .info{
+        @include sm{
+          width: 100%;
+        }
+        .nameField{
+          margin-right: 1rem;
+          @include sm{
+            margin-right: 0;
+          }
+         }
+        input{
+          width: 100%;
+          padding: 1rem 0.5rem;
+          margin-bottom: 1rem;
+          font-size: 1rem;
+          border-radius: 5px;
+          border: 1px solid $color-6;
+          background-color: $color-6;
+          color: $color-1;
+          transition: ease-in-out 0.3s;
+          &:focus{
+            outline: none;
+            border: 1px solid $color-4;
+          }
+        }
+      }
+      textarea{
+        width: 100%;
+        padding: 0.5rem;
+        margin:  0 0 1rem 0;
+        border-radius: 5px;
+        background-color: $color-6;
+        color: $color-1;
+        font-size: 1rem;
+        border: 1px solid $color-6;
+        resize: none;
+        font-weight: 400;
+        transition: ease-in-out 0.3s;
+        &:focus{
+          outline: none;
+          border: 1px solid $color-4;
+        }
+      }
+      button{
+        @include commonButton(0.5rem, 1rem);
+        width: 100%;
+        margin: 0.5rem auto;
+      }
+    }
+  }
+}
+
+
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
