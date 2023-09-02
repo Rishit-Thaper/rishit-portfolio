@@ -304,13 +304,14 @@ body{
 //projects-section
 
 .projects{
-  animation: fadeIn 1s ease-in-out;
 
   @include commonEffect();
   @include md{
     padding: 5rem 2rem; 
   }
   .project-grid{
+    animation: fadeIn 1s ease-in-out;
+
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
