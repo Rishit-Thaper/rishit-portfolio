@@ -1,4 +1,3 @@
-import React from 'react'
 import {TbBrandCpp,TbBrandTypescript,TbSql} from 'react-icons/tb'
 import {FaJava} from 'react-icons/fa'
 import {IoLogoJavascript,IoLogoCss3,IoLogoNodejs,IoLogoSass} from 'react-icons/io'

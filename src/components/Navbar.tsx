@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 import {HiMenu} from 'react-icons/hi'
 
 import { NavLink } from 'react-router-dom'
@@ -16,9 +16,6 @@ export default function navbar() {
     setSidebarOpen(!sidebarOpen);
   };
 
-  const closeSidebar = () => {
-    setSidebarOpen(false);
-  };
   return (
     <div className='nav'>
       <button className="burger-menu" onClick={toggleSidebar}><HiMenu/></button>

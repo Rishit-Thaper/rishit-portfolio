@@ -1,4 +1,3 @@
-import React from 'react'
 import myPic from '../assets/about.jpg'
 export default function About() {
   return (

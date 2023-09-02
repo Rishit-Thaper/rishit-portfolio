@@ -1,4 +1,3 @@
-import React from 'react'
 import {Link} from 'react-router-dom';
 import clgweb from '../assets/clgWeb.png'
 import dodiddone from '../assets/ddd.png'
